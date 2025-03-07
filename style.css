@@ -1,0 +1,10 @@
+body{
+    font-family: sans-serif;
+    margin: 20px;
+}
+#input{
+    margin-bottom: 10px;
+}
+#lista-comentarios li{
+    padding: 8px;
+}
