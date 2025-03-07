@@ -6,5 +6,6 @@ body{
     margin-bottom: 10px;
 }
 #lista-comentarios li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 8px;
 }

@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded',() =>{
         const comentario= comentarioInput.value.trim();
         if(comentario){
             const nuevoComentario={
-                contenido: comentario
-
+                contenido: comentario,
+                fecha: new Date().toLocaleString().toLowerCase()
             };
             comentarios.push(nuevoComentario);
             AgregarComentario(nuevoComentario,lista);
@@ -38,6 +38,11 @@ function AgregarComentario(nuevoComentario, lista) {
     const nuevoItem = document.createElement('li');
     nuevoItem.textContent = nuevoComentario.contenido;
     
+    const fechaComentario = document.createElement('p');
+    fechaComentario.textContent = nuevoComentario.fecha;
+    fechaComentario.style.fontSize = '0.8em';
+    fechaComentario.style.textTransform = 'lowercase';
+    
     const botonEliminar = document.createElement('button');
     botonEliminar.textContent = 'Eliminar';
     botonEliminar.style.marginLeft = '10px';
@@ -45,6 +50,7 @@ function AgregarComentario(nuevoComentario, lista) {
         lista.removeChild(nuevoItem);
     });
     
+    nuevoItem.appendChild(fechaComentario);
     nuevoItem.appendChild(botonEliminar);
     lista.appendChild(nuevoItem);
 }
